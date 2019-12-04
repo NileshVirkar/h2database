@@ -260,7 +260,26 @@
           </includes>
         </configuration>
       </plugin>
-
+			<plugin>
+				<groupId>org.openclover</groupId>
+				<artifactId>clover-maven-plugin</artifactId> 
+				<version>4.2.0</version>
+				<configuration>
+					<generateXml>true</generateXml>
+					<generateHtml>false</generateHtml>
+					<generatePdf>false</generatePdf>
+					<generateJson>false</generateJson>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>site</phase>
+						<goals>
+							<goal>instrument</goal>
+							<goal>clover</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
     </plugins>
   </build>
 
